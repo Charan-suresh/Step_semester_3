@@ -1,4 +1,4 @@
-public abstract class Shape {
+abstract class Shape {
     private static int counter = 1000;
     private final String shapeId;
     protected double scaleX = 1.0;
@@ -29,6 +29,54 @@ public abstract class Shape {
         if (s != null) {
             System.out.println(s.calculateArea());
         }
+    }
+}
+
+class CircleShape extends Shape {
+    private final double radius;
+
+    public CircleShape(double radius) {
+        super();
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius must be positive");
+        }
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * (radius * scaleX) * (radius * scaleY);
+    }
+}
+
+class SquareShape extends Shape {
+    private final double side;
+
+    public SquareShape(double side) {
+        super();
+        if (side <= 0) {
+            throw new IllegalArgumentException("Side must be positive");
+        }
+        this.side = side;
+    }
+
+    public double getSide() {
+        return side;
+    }
+
+    @Override
+    public double calculateArea() {
+        return (side * scaleX) * (side * scaleY);
+    }
+}
+
+public class BasicDrawingCanvas {
+    public static void printArea(Shape s) {
+        Shape.printArea(s);
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,12 @@
-public abstract class LibraryItem {
+interface Renewable {
+    String renew();
+}
+
+interface Reservable {
+    String reserve();
+}
+
+abstract class LibraryItem {
     private static int counter = 1000;
     private final String itemId;
     private final String title;
@@ -39,6 +47,75 @@ public abstract class LibraryItem {
             return r.reserve();
         }
         return "Reservation not supported";
+    }
+}
+
+class Textbook extends LibraryItem implements Renewable, Reservable {
+
+    public Textbook(String title) {
+        super(title);
+    }
+
+    @Override
+    public int getLoanPeriodDays() {
+        return 14;
+    }
+
+    @Override
+    public String renew() {
+        return getTitle() + " renewed";
+    }
+
+    @Override
+    public String reserve() {
+        return getTitle() + " reserved";
+    }
+}
+
+class Magazine extends LibraryItem implements Renewable {
+
+    public Magazine(String title) {
+        super(title);
+    }
+
+    @Override
+    public int getLoanPeriodDays() {
+        return 7;
+    }
+
+    @Override
+    public String renew() {
+        return getTitle() + " renewed";
+    }
+}
+
+class DigitalPass implements Renewable {
+    private final String resourceName;
+
+    public DigitalPass(String resourceName) {
+        if (resourceName == null || resourceName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Resource name cannot be blank");
+        }
+        this.resourceName = resourceName.trim();
+    }
+
+    public String getResourceName() {
+        return resourceName;
+    }
+
+    @Override
+    public String renew() {
+        return resourceName + " renewed";
+    }
+}
+
+public class CommunityLibraryCheckoutSystem {
+    public static void processCheckouts(LibraryItem[] items) {
+        LibraryItem.processCheckouts(items);
+    }
+
+    public static String reserveIfSupported(Object o) {
+        return LibraryItem.reserveIfSupported(o);
     }
 
     public static void main(String[] args) {

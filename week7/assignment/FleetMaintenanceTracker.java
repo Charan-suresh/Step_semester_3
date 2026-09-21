@@ -1,4 +1,4 @@
-public abstract class ServiceableVehicle {
+abstract class ServiceableVehicle {
     private double mileage;
 
     public ServiceableVehicle() {
@@ -23,6 +23,51 @@ public abstract class ServiceableVehicle {
             return insurable.getInsuranceInfo();
         }
         return "No insurance record exists";
+    }
+}
+
+interface Insurable {
+    String getInsuranceInfo();
+}
+
+class Forklift extends ServiceableVehicle implements Insurable {
+    private final String assetTag;
+
+    public Forklift(String assetTag) {
+        super();
+        this.assetTag = assetTag;
+    }
+
+    public String getAssetTag() {
+        return assetTag;
+    }
+
+    @Override
+    public String performMaintenance() {
+        return "Forklift " + assetTag + ": hydraulic and fork inspection complete";
+    }
+
+    @Override
+    public String getInsuranceInfo() {
+        return "Insured under fleet policy - Asset " + assetTag;
+    }
+}
+
+class HeavyDutyForklift extends Forklift {
+
+    public HeavyDutyForklift(String assetTag) {
+        super(assetTag);
+    }
+
+    @Override
+    public String performMaintenance() {
+        return super.performMaintenance() + " | high-pressure hydraulic check complete";
+    }
+}
+
+public class FleetMaintenanceTracker {
+    public static String getInsuranceIfApplicable(ServiceableVehicle v) {
+        return ServiceableVehicle.getInsuranceIfApplicable(v);
     }
 
     public static void main(String[] args) {
