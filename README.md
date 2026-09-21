@@ -88,47 +88,15 @@ Week 7 focuses on core Object-Oriented Programming (OOP) concepts: abstract clas
 ```
 week7/
 ├── practice/
-│   ├── Alertable.java
-│   ├── AudioFile.java
-│   ├── Auditable.java
-│   ├── CashPayment.java
-│   ├── CreditCardPayment.java
-│   ├── DigitalPass.java
-│   ├── DualZoneMotionSensor.java
-│   ├── LibraryItem.java
-│   ├── Magazine.java
-│   ├── MediaFile.java
-│   ├── MotionSensor.java
-│   ├── PaymentMethod.java
-│   ├── Playable.java
-│   ├── Podcast.java
-│   ├── Renewable.java
-│   ├── Reservable.java
-│   ├── SecuritySensor.java
-│   ├── SmokeDetector.java
-│   ├── StaffMember.java
-│   ├── TeamLead.java
-│   └── Textbook.java
+│   ├── CheckoutPaymentHandler.java
+│   ├── CommunityLibraryCheckoutSystem.java
+│   ├── HomeSafetyAlertNetwork.java
+│   ├── QuarterlyBonusCalculator.java
+│   └── UniversalMediaLauncher.java
 └── assignment/
-    ├── Attackable.java
-    ├── CircleShape.java
-    ├── Defendable.java
-    ├── EnergyTrackable.java
-    ├── Exportable.java
-    ├── Forklift.java
-    ├── GameCharacter.java
-    ├── HeavyDutyForklift.java
-    ├── HomeDevice.java
-    ├── Insurable.java
-    ├── MobileApp.java
-    ├── Refrigerator.java
-    ├── RemoteControllable.java
-    ├── ReportGenerator.java
-    ├── ServiceableVehicle.java
-    ├── Shape.java
-    ├── SquareShape.java
-    ├── Trap.java
-    ├── UserProfile.java
-    ├── Warrior.java
-    └── WashingMachine.java
+    ├── ArenaBattleSimulator.java
+    ├── BasicDrawingCanvas.java
+    ├── ConnectedHomeControlPanel.java
+    ├── FleetMaintenanceTracker.java
+    └── OneClickDataExport.java
 ```
