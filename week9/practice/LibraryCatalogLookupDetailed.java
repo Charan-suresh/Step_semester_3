@@ -1,28 +1,6 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
-/**
- * Problem 4: Library Catalog Lookup (Detailed Specification)
- *
- * TASK:
- * A library maintains its catalog as a list of book records, where each record
- * contains a unique ISBN (a numeric string) and a title. The catalog is pre-sorted
- * by ISBN in ascending order.
- *
- * INPUT / OUTPUT:
- * - Input: catalog — list of (ISBN, Title) records pre-sorted by ISBN; targetIsbn — string to search.
- * - Output: The title string if found, or "Not Found".
- *
- * CONSTRAINTS:
- * - The catalog is sorted by ISBN in ascending order.
- * - Queries are far more frequent than updates.
- *
- * COMPLEXITY:
- * - Time Complexity: O(log n)
- *   Binary search repeatedly bisects the range. With n records, at most ceil(log2(n))
- *   comparisons are executed.
- * - Space Complexity: O(1)
- *   In-place binary search requiring no auxiliary buffers.
- */
 public class LibraryCatalogLookupDetailed {
 
     public static class Entry {
@@ -35,13 +13,6 @@ public class LibraryCatalogLookupDetailed {
         }
     }
 
-    /**
-     * Binary search lookup enforcing exact constraints.
-     *
-     * @param catalog    pre-sorted list of catalog entries
-     * @param targetIsbn target ISBN to search
-     * @return Title if found, else "Not Found"
-     */
     public static String findBook(List<Entry> catalog, String targetIsbn) {
         if (catalog == null || targetIsbn == null || catalog.isEmpty()) {
             return "Not Found";
@@ -76,14 +47,10 @@ public class LibraryCatalogLookupDetailed {
             new Entry("0005556667", "European History")
         );
 
-        // Example 1
         String query1 = "0003334445";
         System.out.println("Example 1 Output: " + findBook(catalog, query1));
-        // Expected: Classic Mythology
 
-        // Example 2
         String query2 = "0009998887";
         System.out.println("Example 2 Output: " + findBook(catalog, query2));
-        // Expected: Not Found
     }
 }
