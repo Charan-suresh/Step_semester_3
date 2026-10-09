@@ -10,5 +10,4 @@ This repository contains Java program solutions for the STEP semester assignment
 - **Week 6**: Multilevel and hierarchical inheritance, polymorphic dispatch, and downcasting.
 - **Week 7**: Abstract classes vs. capability interfaces, compile-time & runtime polymorphism, method overloading, upcasting, and safe downcasting.
 - **Week 8**: Advanced OOP domain modeling, state management, extensible scoring and pricing strategies, capability composition, and event notifications.
-
----
+- **Week 9**: Data structures and algorithmic techniques: two pointers on sorted arrays, 2D grid row-major and spiral route traversal, binary search and dual boundary queries, fixed and dynamic sliding window, 1D prefix sums, and prefix sum frequency hashing.
